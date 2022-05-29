@@ -22,7 +22,7 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public String showAllUsers(Model model){
+    public String showAllUsers(Model model) {
         List<User> users = userService.getAllUsers();
         model.addAttribute("users", users);
         return "users-table";
@@ -41,20 +41,20 @@ public class UserController {
     }
 
     @GetMapping("user-delete/{id}")
-    public String deleteUser(@PathVariable("id") Long id){
+    public String deleteUser(@PathVariable("id") Long id) {
         userService.removeUserById(id);
         return "redirect:/users";
     }
 
     @GetMapping("user-update/{id}")
-    public String updateUserForm(@PathVariable("id") Long id, Model model){
+    public String updateUserForm(@PathVariable("id") Long id, Model model) {
         User user = userService.findUser(id);
         model.addAttribute("user", user);
         return "users-update";
     }
 
     @PostMapping("/user-update")
-    public String updateUser(User user){
+    public String updateUser(User user) {
         userService.saveUser(user);
         return "redirect:/users";
     }

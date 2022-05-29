@@ -16,7 +16,9 @@ public class User {
 
     @Column(name = "last_name")
     private String lastname;
-    public User(){}
+
+    public User() {
+    }
 
     public User(Long id, String name, String firstname) {
         this.id = id;

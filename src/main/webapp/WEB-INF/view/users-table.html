@@ -15,7 +15,7 @@
             <th>lastname</th>
         </tr>
 
-        <tr th:each ="user : ${users}">
+        <tr th:each="user : ${users}">
             <td th:utext="${user.id}">...</td>
             <td th:utext="${user.firstname}">...</td>
             <td th:utext="${user.lastname}">...</td>
