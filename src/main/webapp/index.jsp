@@ -1,7 +1,7 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>Java pre-project. Lesson 2.3.1</h2>
 
-<a href="/users">users-table</a>
+<a href="/users">Users table</a>
 </body>
 </html>
