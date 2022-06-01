@@ -3,7 +3,6 @@ package crud.dao;
 import crud.model.User;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -24,7 +23,6 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    @Transactional
     public User saveUser(User user) {
         entityManager.merge(user);
         return user;
@@ -36,7 +34,6 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    @Transactional
     public void removeUserById(Long id) {
         entityManager.createQuery("DELETE FROM User u WHERE u.id=:id").setParameter("id", id)
                 .executeUpdate();
